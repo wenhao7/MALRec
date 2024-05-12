@@ -1,0 +1,15 @@
+name: MalRec
+channels:
+  - 'https://repo.continuum.io/pkgs/free' # Remove this line and it fails!!!
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - nltk
+  - flask
+  - beautifulsoup4
+  - pillow
+  - requests
+  - scikit-learn

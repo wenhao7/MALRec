@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<title>Anime Recommender</title>
+{% include "header.html" %}
+
+<style>
+.login {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 400px;
+  background-color: rgba(255,255,255,0.95);
+	
+input[type=text] {
+	width:400px;
+	}
+
+.center{
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  }
+  
+.text{
+  width: 90%;
+  margin: auto;
+  padding-top: 10px;
+  }
+</style>
+
+<html>
+<body style="background: url('{{url_for('static', filename='collage_white.jpg') }}');  background-position: center">
+	<div class="login">
+		<div class="header center"><h1>Anime Recommender</h1></div>
+		 <!-- Main Input For Receiving Query to ML -->
+		<form action="{{ url_for('recommend')}}"method="post">
+			<input type="text" name="username" placeholder="Enter MyAnimeList Username" required="required" />
+		 <button type="submit" class="submit_btn">Recommend</button>
+		</form>
+		<div class='text'>
+		Submit your MyAnimeList username above and recommendations will be generated based on the ratings on your list. Recommendations are generated based on the content of the titles you enjoy and the preferences of other users with similar ratings to you.
+		</div>
+	</div>
+
+
+</body>
+</html>

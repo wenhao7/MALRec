@@ -1,0 +1,35 @@
+<!doctype html>
+<title>Anime Recommender</title>
+{% include "header.html" %}
+
+<link rel="stylesheet" href="static/rec.css">
+
+  <h2> Recommendations for {{usernames_string}} </h2>
+
+{% include "filter.html" %}
+
+<main class="grid">
+	{% for df_row in recommendations.itertuples() %}
+	<article>
+		<div class="text name">
+		<h3><b><a href="{{ 'https://myanimelist.net/anime/{}'.format(df_row.MAL_Id) }}">
+			{{df_row.Name}}
+		</a></b></h3>
+		</div>
+		<div class="box box1">
+			<img class="nested" src={{df_row.Image}} alt={{df_row.MAL_Id}}>
+			<div class="nested">
+				<b>Genres</b>   : {{ ', '.join(df_row.Genres) }} <br>
+				<b>Themes</b>   : {{ ', '.join(df_row.Themes) }} <br>
+				<b>Studio</b>   : {{ df_row.Studio }} <br>
+				<b>Score</b>    : {{ df_row.Score }} <br>
+				{{ df_row.Start_Date// 10000}} | {{ df_row.Episodes}} ep, {{ df_row.Duration }} min <br>
+				<b>Synopsis: </b> <br>
+				<div class="text scroll">
+					<p>{{df_row.Synopsis}}</p>
+				</div>
+			</div>
+		</div>	
+	</article>
+    {% endfor %}
+</main>

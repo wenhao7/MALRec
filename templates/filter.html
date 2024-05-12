@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+	<form action="{{ url_for('filter_rec')}}"method="post">
+		Filter Genres : 
+		<input type="checkbox" name="genre" value="Action">Action</input>
+		<input type="checkbox" name="genre" value="Adventure">Adventure</input>
+		<input type="checkbox" name="genre" value="Comedy">Comedy</input>
+		<input type="checkbox" name="genre" value="Drama">Drama</input>
+		<input type="checkbox" name="genre" value="Fantasy">Fantasy</input>
+		<input type="checkbox" name="genre" value="Horror">Horror</input>
+		<input type="checkbox" name="genre" value="Mystery">Mystery</input>
+		<input type="checkbox" name="genre" value="Romance">Romance</input>
+		<input type="checkbox" name="genre" value="Sci">Sci</input>
+		<input type="checkbox" name="genre" value="Slice of Life">Slice of Life</input>
+		<input type="checkbox" name="genre" value="Sports">Sports</input>
+    <input type="submit" class="smallButton" value="Filter"></button>
+	</form>
+	<form action="{{ url_for('recommend')}}" method="get">
+	<input type="submit" class="smallButton" value="Reset"></button>
+	</form>
